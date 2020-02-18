@@ -85,7 +85,11 @@ class Game extends React.Component {
         const winner = calculateWinner(current.squares);
 
         const moves = history.map((step, move) => {
-            const desc = move ? 'Go to move #' + move : 'Go to game start';
+            let desc;
+            if (this.state.stepNumber === move)
+                desc = move ? <b>Go to move #{move}</b> : <b>Go to game start</b>;
+            else
+                desc = move ? 'Go to move #' + move : 'Go to game start';
             let coords = <span></span>;
             if (move !== 0)
                 coords = <span>({step.lastClickLoc[0]}/{step.lastClickLoc[1]})</span>;
