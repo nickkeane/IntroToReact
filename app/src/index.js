@@ -91,6 +91,8 @@ class Game extends React.Component {
             status = 'Winner: ' + winner;
         } else {
             status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+            if (current.squares.filter((i) => i !== null).length === 9)
+                status = 'Board full. Winner not determined.';            
         }
 
         return (
