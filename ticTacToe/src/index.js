@@ -103,7 +103,7 @@ class Game extends React.Component {
 
         let status;
         if (winner) {
-            status = 'Winner: ' + winner;
+            status = 'Winner: ' + winner.shape;
         } else {
             status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
             if (current.squares.filter((i) => i !== null).length === 9)
@@ -139,7 +139,7 @@ function calculateWinner(squares) {
     for (let i = 0; i < lines.length; ++i) {
         const [a, b, c] = lines[i];
         if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-            return squares[a];
+            return {shape: squares[a], line: lines[i]};
         }
     }
     return null;
