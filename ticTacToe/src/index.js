@@ -14,23 +14,10 @@ class Board extends React.Component {
     }
 
     render() {
+        let sizeRange = [...Array(this.props.size).keys()];
         return (
             <div>
-                <div className="board-row">
-                {this.renderSquare(0)}
-                {this.renderSquare(1)}
-                {this.renderSquare(2)}
-                </div>
-                <div className="board-row">
-                {this.renderSquare(3)}
-                {this.renderSquare(4)}
-                {this.renderSquare(5)}
-                </div>
-                <div className="board-row">
-                {this.renderSquare(6)}
-                {this.renderSquare(7)}
-                {this.renderSquare(8)}
-                </div>
+                {sizeRange.map((y) => <div className="board-row">{sizeRange.map((x) => this.renderSquare(y * 3 + x))}</div>)}
             </div>
         );
     }
@@ -113,7 +100,7 @@ class Game extends React.Component {
         return (
             <div className="game">
                 <div className="game-board">
-                    <Board squares={current.squares} onClick={(i) => this.handleClick(i)} />
+                    <Board size={3} squares={current.squares} onClick={(i) => this.handleClick(i)} />
                 </div>
                 <div className="game-info">
                     <div>{status}</div>
