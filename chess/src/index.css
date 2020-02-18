@@ -1,11 +1,12 @@
 body {
     font-family: Impact, Charcoal, sans-serif;
-    font-size: 52px;
+    font-size: 24px;
     text-align: center;
 }
 
 .block-row {
     clear: both;
+    width: 100%;
 }
 
 .block {
