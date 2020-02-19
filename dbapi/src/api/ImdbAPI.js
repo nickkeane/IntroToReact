@@ -2,10 +2,6 @@ export class ImdbAPI {
     apiKey = 'efa13aa52f769cb1853dfd3b374171ad';
     url = 'https://api.themoviedb.org/3/'
 
-    constructor() {
-
-    }
-
     async testMadMax() {
         try {
             let response = await fetch(this.url + 'movie/76341?api_key=' + this.apiKey)
