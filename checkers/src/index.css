@@ -4,13 +4,20 @@
     font-family: 'Comfortaa', cursive;
 }
 
+/* App */
 .app-container {
     display: flex;
 }
 
 /* Board */
 .board {
-
+    border: 20px;
+    margin: 0 auto;
+    display: grid; /* or inline-grid */
+    gap: 0px;
+    grid-auto-flow: row;
+    grid-template-rows: repeat(8, 32px);
+    grid-template-columns: repeat(8, 32px);
 }
 
 .board-light {

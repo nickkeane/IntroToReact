@@ -14,6 +14,14 @@ export class Checker extends React.Component {
         this.setState({isKing: true});
     }
 
+    move() {
+
+    }
+
+    jump() {
+        // Check for additional moves
+    }
+
     render() {
         return (
             <div>CheckerPiece</div>
