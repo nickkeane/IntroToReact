@@ -1,20 +1,39 @@
 import React from 'react';
 
+// CSS Inline Styles
+
+const textStyle = {
+    margin: '0px 0px 0px 0px',
+    textAlign: 'center',
+    fontFamily: 'Arial',
+    fontSize: 16
+}
+
+const divBorder = {
+    padding: 10
+}
+
 export class Movie extends React.Component {
     render() {
         const movie = this.props.movie;
         if (movie) {
-            return (<div>
-                <img src={`https://image.tmdb.org/t/p/w185${movie.poster_path}`} alt={movie.original_title} />
-                <div><b><i>{movie.original_title}</i></b></div>
-                <div>Release Date: {movie.release_date}</div>
-                <div>Budget: ${movie.budget.toLocaleString()}</div>
-                <div>Revenue: ${movie.revenue.toLocaleString()}</div>
-                <div>{
-                    movie.genres.map((o, i) => { return <span>{o.name}, </span> })
-                }</div>
-                <div>Ratings: {movie.vote_average}/10.0 ({movie.vote_count} votes)</div>
-            </div>);
+            return (
+            <div style={textStyle}>
+                <div style={divBorder}>
+                    <img src={`https://image.tmdb.org/t/p/w185${movie.poster_path}`} alt={movie.original_title} />
+                </div>
+                <div style={divBorder}>
+                    <div><b><i>{movie.original_title}</i></b></div>
+                    <div>Release Date: {movie.release_date}</div>
+                    <div>Budget: ${movie.budget.toLocaleString()}</div>
+                    <div>Revenue: ${movie.revenue.toLocaleString()}</div>
+                    <div>{
+                        movie.genres.map((o, i) => { return <span>{o.name}, </span> })
+                    }</div>
+                    <div>Ratings: {movie.vote_average}/10.0 ({movie.vote_count} votes)</div>
+                </div>
+            </div>
+            );
         } else {
             return <div></div>
         }
