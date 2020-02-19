@@ -14,6 +14,7 @@ const btnText = {
     margin: '0px 5px',
     filter: 'drop-shadow(3px 3px 0px #332299)'
 }
+
 export class Toolbar extends React.Component {
     render() {
         return (
@@ -22,9 +23,8 @@ export class Toolbar extends React.Component {
                     <b>IMDB SEEKER</b>
                 </div>
                 <div>
-                    <button style={btnText} onClick={() => { this.props.onClickSearch(); }}>Search</button>
-                    <button style={btnText} onClick={() => { this.props.onClickLookup(); }}>Lookup</button>
-                    <button style={btnText} onClick={() => { this.props.onClickFind(); }}>Find</button>
+                    <input id="searchQueryBox" style={btnText}></input>
+                    <button style={btnText} onClick={() => { this.props.onClickSearch(document.getElementById("searchQueryBox").value); }}>Search</button>
                 </div>
             </div>
         )
