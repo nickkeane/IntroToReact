@@ -5,7 +5,7 @@ export class ImdbAPI {
     async testMadMax() {
         try {
             let response = await fetch(`${this.url}movie/76341?
-                api_key=${this.apiKey}`);
+api_key=${this.apiKey}`);
             if (response.ok)
                 return await response.json();
         } catch (err) {
@@ -17,9 +17,9 @@ export class ImdbAPI {
         throw 'Not Implemented';        
         try {
             let response = await fetch(`${this.url}discover/movie?
-                api_key=${this.apiKey}
-                &primary_release_date.gte=2020-01-01
-                &primary_release_date.lte=2020-03-01`);
+api_key=${this.apiKey}
+&primary_release_date.gte=2020-01-01
+&primary_release_date.lte=2020-03-01`);
             if (response.ok)
                 return await response.json();
         } catch (err) {
@@ -42,7 +42,8 @@ export class ImdbAPI {
     async searchMovies(query, pageNum) {
         throw 'Not Implemented';
         try {
-            let response = await fetch(`${this.url}search?api_key=${this.apiKey}`);
+            let response = await fetch(`${this.url}search?
+api_key=${this.apiKey}`);
         } catch (err) {
             console.log(err);
         }
