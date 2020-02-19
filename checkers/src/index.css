@@ -1,13 +1,48 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+#root {
+    text-align: center;
+    padding-top: 20px;
+    font-family: 'Comfortaa', cursive;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.app-container {
+    display: flex;
+}
+
+/* Board */
+.board {
+
+}
+
+.board-light {
+    width: 32px;
+    height: 32px;
+    background-color: green;
+}
+
+.board-dark {
+    width: 32px;
+    height: 32px;
+    background-color: darkgreen;
+}
+
+/* Pieces */
+.checker {
+    width: 32px;
+    height: 32px;
+}
+
+.checker-blackpawn {
+    background-color: black;
+}
+
+.checker-redpawn {
+    background-color: red;    
+}
+
+.checker-blackking {
+    background-color: gold;
+}
+
+.checker-redking {
+    background-color: silver;
 }
