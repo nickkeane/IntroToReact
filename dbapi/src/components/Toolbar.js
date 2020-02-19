@@ -24,7 +24,7 @@ export class Toolbar extends React.Component {
                 </div>
                 <div>
                     <input id="searchQueryBox" style={btnText}></input>
-                    <button style={btnText} onClick={() => { this.props.onClickSearch(document.getElementById("searchQueryBox").value); }}>Search</button>
+                    <button style={btnText} onClick={(e) => { this.props.onClickSearch(e, document.getElementById("searchQueryBox").value); }}>Search</button>
                 </div>
             </div>
         )

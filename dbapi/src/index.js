@@ -22,10 +22,10 @@ class App extends Component {
             this.setState({movie: null});
     }
 
-    handleSearch(value) {
+    handleSearch(e, value) {
         // TODO: Implement API Calls
         if (this.api) {
-            
+
         }
     }
 
