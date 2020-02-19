@@ -2,11 +2,18 @@ import React from 'react';
 
 export class Movie extends React.Component {
     render() {
-
-        if (this.props.movie) {
+        const movie = this.props.movie;
+        if (movie) {
             return (<div>
-                <div></div>
-                <img src="" alt={this.props.movie.original_title} />
+                <img src={`https://image.tmdb.org/t/p/w185${movie.poster_path}`} alt={movie.original_title} />
+                <div><b><i>{movie.original_title}</i></b></div>
+                <div>Release Date: {movie.release_date}</div>
+                <div>Budget: ${movie.budget.toLocaleString()}</div>
+                <div>Revenue: ${movie.revenue.toLocaleString()}</div>
+                <div>{
+                    movie.genres.map((o, i) => { return <span>{o.name}, </span> })
+                }</div>
+                <div>Ratings: {movie.vote_average}/10.0 ({movie.vote_count} votes)</div>
             </div>);
         } else {
             return <div></div>
@@ -14,30 +21,6 @@ export class Movie extends React.Component {
     }
 }
 
-// {
-//     "adult": false,
-//     "backdrop_path": "/tbhdm8UJAb4ViCTsulYFL3lxMCd.jpg",
-//     "belongs_to_collection": {
-//       "id": 8945,
-//       "name": "Mad Max Collection",
-//       "poster_path": "/jZowUf4okNYuSlgj5iURE7CDMho.jpg",
-//       "backdrop_path": "/zI0q2ENcQOLECbe0gAEGlncVh2j.jpg"
-//     },
-//     "budget": 150000000,
-//     "genres": [
-//       {
-//         "id": 28,
-//         "name": "Action"
-//       },
-//       {
-//         "id": 12,
-//         "name": "Adventure"
-//       },
-//       {
-//         "id": 878,
-//         "name": "Science Fiction"
-//       }
-//     ],
 //     "homepage": "http://www.madmaxmovie.com",
 //     "id": 76341,
 //     "imdb_id": "tt1392190",
