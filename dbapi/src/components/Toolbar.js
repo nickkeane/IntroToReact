@@ -11,7 +11,7 @@ const btnText = {
     borderColor: "#0077AA",
     fontSize: 20,
     padding: '5px 20px',
-    margin: '0px 5px',
+    margin: '5px 5px',
     filter: 'drop-shadow(3px 3px 0px #332299)'
 }
 
