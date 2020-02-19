@@ -23,6 +23,11 @@ export class Toolbar extends React.Component {
                     <b>IMDB SEEKER</b>
                 </div>
                 <div>
+                    <button style={btnText}>Now Playing</button>
+                    <button style={btnText}>Popular</button>
+                    <button style={btnText}>Top Rated</button>
+                </div>
+                <div>
                     <input id="searchQueryBox" style={btnText}></input>
                     <button style={btnText} onClick={(e) => { this.props.onClickSearch(e, document.getElementById("searchQueryBox").value); }}>Search</button>
                 </div>
