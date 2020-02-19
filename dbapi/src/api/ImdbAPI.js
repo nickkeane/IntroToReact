@@ -14,7 +14,7 @@ api_key=${this.apiKey}`);
     }
 
     async getNowPlaying(pageNum) {
-        throw 'Not Implemented';        
+        throw Error('Not Implemented');
         try {
             let response = await fetch(`${this.url}discover/movie?
 api_key=${this.apiKey}
@@ -28,19 +28,19 @@ api_key=${this.apiKey}
     }
 
     async getUpcoming(pageNum) {
-        throw 'Not Implemented';
+        throw Error('Not Implemented');
     }
 
     async getTopRated(pageNum) {
-        throw 'Not Implemented';
+        throw Error('Not Implemented');
     }
 
     async getPopular(pageNum) {
-        throw 'Not Implemented';
+        throw Error('Not Implemented');
     }
 
     async searchMovies(query, pageNum) {
-        throw 'Not Implemented';
+        throw Error('Not Implemented');
         try {
             let response = await fetch(`${this.url}search?
 api_key=${this.apiKey}`);
