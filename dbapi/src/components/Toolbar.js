@@ -24,6 +24,7 @@ export class Toolbar extends React.Component {
                 </div>
                 <div>
                     <button style={btnText}>Now Playing</button>
+                    <button style={btnText}>Upcoming</button>                    
                     <button style={btnText}>Popular</button>
                     <button style={btnText}>Top Rated</button>
                 </div>
