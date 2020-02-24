@@ -1,10 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import $ from 'jquery';
 import './index.css';
 
 class App extends React.Component {
+    componentDidMount() { 
+        $('#myTest').addClass('font-tw');
+    }
+
     render() {
-        return (<div>Test</div>);
+        return (<div id="myTest">Testing Fonts and jQuery</div>);
     }
 }
 
