@@ -2,12 +2,15 @@
 @import url(./fonts/roboto.css);
 @import url(./fonts/tradeWinds.css);
 
+/* CSS Reset */
 body {
     display: block;
-    margin: 0px auto;
+    margin: 0em auto;
+    padding: 0em;
+    border: 0em;
 }
 
 .font-tw {
     font-family: 'Trade Winds';
-    font-size: 40px;
+    font-size: 4em;
 }
