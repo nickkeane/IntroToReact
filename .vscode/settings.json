@@ -6,6 +6,6 @@
     "stylelint.enable": true,
     "eslint.enable": true,
     "workbench.colorCustomizations": {
-        "editorWhitespace.foreground": "#71746a" // whatever hex color you want
+        "editorWhitespace.foreground": "#61645a" // whatever hex color you want
     }
 }

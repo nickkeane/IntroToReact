@@ -1,0 +1,66 @@
+body {
+    margin: 0px auto;
+    background-color: #ffffff;
+}
+
+.cb-container {
+    display: grid;
+    gap: 0 0;
+    grid-template-rows: 40px repeat(8, 70px) 40px;
+    grid-template-columns: repeat(8, 70px);
+    grid-auto-flow: row;
+}
+
+.cb-container-inner {
+    display: grid;
+    grid: 0 0;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(8, auto);
+    grid-auto-flow: row;
+    align-items: stretch;
+}
+
+.cb-square {
+    padding: 20px;
+    font-size: 150%;
+    background-color: #b5915f;
+    color: #000000;
+    text-align: center;
+}
+
+.cb-square-inner {
+    text-align: center;
+    align-self: center;
+}
+
+.top, .bottom {
+    display: grid;
+    align-items: stretch;
+    backgorund-color: #7d694c;
+}
+
+.top {
+    grid-column-start: 1;
+    grid-column-end: 9;
+    grid-row-start: 1;
+    grid-row-end: 1;
+}
+
+.bottom {
+    grid-column-start: 1;
+    grid-column-end: 9;
+    grid-row-start: 10;
+    grid-row-end: 10;
+}
+
+# Recolor alternating squares
+.cb-square:nth-child(-2n+9),
+.cb-square:nth-child(9) ~ div:nth-child(-2n+16),
+.cb-square:nth-child(17) ~ div:nth-child(-2n+25), 
+.cb-square:nth-child(25) ~ div:nth-child(-2n+32), 
+.cb-square:nth-child(33) ~ div:nth-child(-2n+41), 
+.cb-square:nth-child(41) ~ div:nth-child(-2n+48), 
+.cb-square:nth-child(49) ~ div:nth-child(-2n+57), 
+.cb-square:nth-child(57) ~ div:nth-child(-2n+64) {
+    background-color: #441a03;
+}
