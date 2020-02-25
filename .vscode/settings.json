@@ -1,3 +1,11 @@
 {
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "css.validate": false,
+    "scss.validate": false,
+    "less.validate": false,
+    "stylelint.enable": true,
+    "eslint.enable": true,
+    "workbench.colorCustomizations": {
+        "editorWhitespace.foreground": "#91948a" // whatever hex color you want
+    }
 }

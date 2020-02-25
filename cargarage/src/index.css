@@ -1,4 +1,16 @@
-#root {
-    margin: 0px auto;
-    padding: 0px;
+@import-normalize;
+@import url(./fonts/roboto.css);
+@import url(./fonts/tradeWinds.css);
+
+/* CSS Reset */
+body {
+    display: block;
+    margin: 0em auto;
+    padding: 0em;
+    border: 0em;
+}
+
+.font-tw {
+    font-family: 'Trade Winds';
+    font-size: 4em;
 }

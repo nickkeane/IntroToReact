@@ -1,0 +1,14 @@
+{
+  "extends": "stylelint-config-recommended",
+  "rules": {
+    "font-family-no-missing-generic-family-keyword": null,      
+    "at-rule-no-unknown": [ true, {
+      "ignoreAtRules": [
+        "extends",
+        "tailwind"
+      ]
+    }],
+    "block-no-empty": null,
+    "unit-whitelist": ["em", "rem", "s"]
+  }
+}
