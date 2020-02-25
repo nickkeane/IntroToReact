@@ -6,8 +6,23 @@ export class ChessBoard extends React.Component {
     render() {
         let sizeRange = [...Array(8).keys()];
 
+        const cbHeaders = "ABCDEFGH";
+
         return (
             <div>
+                <div className="cb-container">
+                    <div className="cb-top">
+                        <div className="cb-container-inner"> 
+                            {cbHeaders.split('').map((o, i) => <div className="cb-square-inner" key={i}>{o}</div>)} 
+                        </div>
+                    </div>
+                    <div className="cb-bottom">
+                        <div className="cb-container-inner"> 
+                            {cbHeaders.split('').map((o, i) => <div className="cb-square-inner" key={i}>{o}</div>)} 
+                        </div>
+                    </div>
+                </div>
+
                 <div style={{float: 'left'}}>
                     {sizeRange.map((y) => 
                     <div className="block-row"> {sizeRange.map((x) => {

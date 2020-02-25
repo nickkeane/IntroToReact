@@ -33,20 +33,20 @@ body {
     align-self: center;
 }
 
-.top, .bottom {
+.cb-top, .cb-bottom {
     display: grid;
     align-items: stretch;
     backgorund-color: #7d694c;
 }
 
-.top {
+.cb-top {
     grid-column-start: 1;
     grid-column-end: 9;
     grid-row-start: 1;
     grid-row-end: 1;
 }
 
-.bottom {
+.cb-bottom {
     grid-column-start: 1;
     grid-column-end: 9;
     grid-row-start: 10;
