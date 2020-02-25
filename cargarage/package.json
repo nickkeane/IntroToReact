@@ -20,10 +20,13 @@
     "jquery": "^3.4.1",
     "normalize.css": "^8.0.1",
     "postcss-normalize": "^8.0.1",
+    "postcss-scss": "^2.0.0",
     "prettier": "^1.19.1",
+    "pug": "^2.0.4",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-scripts": "3.4.0",
+    "sass": "^1.25.0",
     "typeorm": "^0.2.22",
     "typescript": "^3.7.5"
   },
