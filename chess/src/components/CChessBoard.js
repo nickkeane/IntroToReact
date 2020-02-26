@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { Block } from './Block';
+import { CBlock } from './CBlock';
 
-export class ChessBoard extends React.Component {
+export class CChessBoard extends React.Component {
     constructor(props) {
         super(props);
 
@@ -49,7 +49,7 @@ export class ChessBoard extends React.Component {
                             shade = (y % 2) === 0 ? 'light' : 'dark';
                         else
                             shade = (y % 2) === 0 ? 'dark' : 'light';
-                        return <Block shadeType={shade}/>;
+                        return <CBlock shadeType={shade}/>;
                     })}
                     </div> )}
                 </div>
