@@ -45,7 +45,7 @@ body {
     grid-row-start: 1;
     grid-row-end: 1;
     background: rgb(38,20,8);
-    background: linear-gradient(0deg, rgba(38,20,8,1) 0%, rgba(62,39,5,1) 35%, rgba(166,107,0,1) 100%);    
+    background: linear-gradient(0deg, rgba(38,20,8,1) 0%, rgba(62,39,5,1) 35%, rgba(166,107,0,1) 100%);
 }
 
 .cb-bottom {
@@ -54,7 +54,7 @@ body {
     grid-row-start: 10;
     grid-row-end: 10;
     background: rgb(38,20,8);
-    background: linear-gradient(180deg, rgba(38,20,8,1) 0%, rgba(62,39,5,1) 35%, rgba(166,107,0,1) 100%);    
+    background: linear-gradient(180deg, rgba(38,20,8,1) 0%, rgba(62,39,5,1) 35%, rgba(166,107,0,1) 100%);
 }
 
 # Recolor alternating squares

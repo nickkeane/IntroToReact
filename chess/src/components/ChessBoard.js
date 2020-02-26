@@ -3,22 +3,39 @@ import React from 'react';
 import { Block } from './Block';
 
 export class ChessBoard extends React.Component {
+    constructor(props) {
+        super(props);
+
+        let board = new Array(8);
+        for (let i = 0; i < 8; ++i)
+            board[i] = new Array(8).fill(null);
+
+        this.state = {
+            board: board
+        };
+    }
     render() {
         let sizeRange = [...Array(8).keys()];
-
         const cbHeaders = "ABCDEFGH";
+
+        let topHeader = cbHeaders.split('').map((o, i) => <div className="cb-square-inner" key={i}>{o}</div>);
+        let botHeader = cbHeaders.split('').map((o, i) => <div className="cb-square-inner" key={i}>{o}</div>);
+
+        let squares = new [sizeRange.length * sizeRange.length];
+        squares = squares.map((o, i) => <div className="cb-square" key={i}></div>);
 
         return (
             <div>
                 <div className="cb-container">
                     <div className="cb-top">
                         <div className="cb-container-inner"> 
-                            {cbHeaders.split('').map((o, i) => <div className="cb-square-inner" key={i}>{o}</div>)} 
+                            {topHeader}
                         </div>
                     </div>
+                    {squares}
                     <div className="cb-bottom">
                         <div className="cb-container-inner"> 
-                            {cbHeaders.split('').map((o, i) => <div className="cb-square-inner" key={i}>{o}</div>)} 
+                            {botHeader} 
                         </div>
                     </div>
                 </div>
