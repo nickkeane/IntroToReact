@@ -19,7 +19,10 @@ export class CChessBoard extends React.Component {
         let topHeader = cbHeaders.split('').map((o, i) => <div className="cb-header-inner" key={i}>{o}</div>);
         let botHeader = cbHeaders.split('').map((o, i) => <div className="cb-header-inner" key={i}>{o}</div>);
         let squares = new Array(boardDims).fill(0);
-        squares = squares.map((o, i) => <div className="cb-square" key={i}>&#9812;</div>);
+        squares = squares.map((o, i) => { 
+            const piece = '&#9812;'
+            return <div className="cb-square" key={i}>{piece}</div> 
+        });
 
         return (
             <div>
