@@ -1,31 +1,24 @@
 import React from 'react';
 
 import { CBlock } from './CBlock';
+import { ChessBoard } from '../models/ChessBoard';
 
 export class CChessBoard extends React.Component {
     constructor(props) {
         super(props);
 
-        let board = new Array(8);
-        for (let i = 0; i < 8; ++i)
-            board[i] = new Array(8).fill(null);
-
-        this.state = {
-            board: board
+        this.state = { 
+            board: new ChessBoard(), 
         };
     }
-    render() {
-        let pieces = {
-            wKing: '&#9812;'
-        };
 
-        let sizeRange = [...Array(8).keys()];
+    render() {
         const cbHeaders = "ABCDEFGH";
+        const boardDims = this.state.board._board.length * this.state.board._board.length;
 
         let topHeader = cbHeaders.split('').map((o, i) => <div className="cb-header-inner" key={i}>{o}</div>);
         let botHeader = cbHeaders.split('').map((o, i) => <div className="cb-header-inner" key={i}>{o}</div>);
-
-        let squares = new Array(sizeRange.length * sizeRange.length).fill(0);
+        let squares = new Array(boardDims).fill(0);
         squares = squares.map((o, i) => <div className="cb-square" key={i}>&#9812;</div>);
 
         return (
