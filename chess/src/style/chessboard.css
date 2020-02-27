@@ -1,8 +1,3 @@
-body {
-    margin: 0px auto;
-    background-color: #ffffff;
-}
-
 .cb-container {
     display: grid;
     gap: 0 0;
@@ -21,14 +16,15 @@ body {
 }
 
 .cb-square {
-    padding: 20px;
-    font-size: 150%;
+    font-size: 200%;
+    font-weight: bold;
     background-color: #b5915f;
     color: #000000;
     text-align: center;
 }
 
-.cb-square-inner {
+# Grid Letter Mapping
+.cb-header-inner {
     text-align: center;
     align-self: center;
 }
@@ -36,7 +32,6 @@ body {
 .cb-top, .cb-bottom {
     display: grid;
     align-items: stretch;
-    /* backgorund-color: #7d694c; */
 }
 
 .cb-top {
@@ -44,8 +39,7 @@ body {
     grid-column-end: 9;
     grid-row-start: 1;
     grid-row-end: 1;
-    background: rgb(38,20,8);
-    background: linear-gradient(0deg, rgba(38,20,8,1) 0%, rgba(62,39,5,1) 35%, rgba(166,107,0,1) 100%);
+    background: linear-gradient(0deg, rgb(95, 53, 25) 0%, rgb(105, 66, 12) 35%, rgba(166,107,0,1) 100%);
 }
 
 .cb-bottom {
@@ -53,11 +47,11 @@ body {
     grid-column-end: 9;
     grid-row-start: 10;
     grid-row-end: 10;
-    background: rgb(38,20,8);
-    background: linear-gradient(180deg, rgba(38,20,8,1) 0%, rgba(62,39,5,1) 35%, rgba(166,107,0,1) 100%);
+    background: linear-gradient(180deg, rgb(95, 53, 25) 0%, rgb(105, 66, 12) 35%, rgba(166,107,0,1) 100%);
 }
 
 # Recolor alternating squares
+.cb-square {}
 .cb-square:nth-child(-2n+9),
 .cb-square:nth-child(9) ~ div:nth-child(-2n+16),
 .cb-square:nth-child(17) ~ div:nth-child(-2n+25), 
@@ -66,5 +60,5 @@ body {
 .cb-square:nth-child(41) ~ div:nth-child(-2n+48), 
 .cb-square:nth-child(49) ~ div:nth-child(-2n+57), 
 .cb-square:nth-child(57) ~ div:nth-child(-2n+64) {
-    background-color: #441a03;
+    background-color: #542a13;
 }

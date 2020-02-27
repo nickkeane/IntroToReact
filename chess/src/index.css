@@ -1,24 +1,7 @@
 body {
+    margin: 0px auto;
     font-family: Impact, Charcoal, sans-serif;
-    font-size: 24px;
-    text-align: center;
-}
-
-.block-row {
-    clear: both;
-    width: 100%;
-}
-
-.block {
-    float: left;
-    width: 64px;
-    height: 64px;
-}
-
-.shade-light {
-    background-color: lightcoral;
-}
-
-.shade-dark {
-    background-color: darkred;
+    font-size: 24px;    
+    background-color: #ffffff;
+    text-align: left;
 }

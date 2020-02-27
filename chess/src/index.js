@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ChessGame } from './components/ChessGame'
+import { CChessGame } from './components/CChessGame'
 import './index.css'
+import './style/chessboard.css'
 
-ReactDOM.render(<ChessGame />, document.getElementById('root'));
+ReactDOM.render(<CChessGame />, document.getElementById('root'));
