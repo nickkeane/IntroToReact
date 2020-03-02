@@ -22,10 +22,13 @@ const PieceColorLength = Object.keys(PieceColor).length / 2;
 const PieceTypeLength = Object.keys(PieceType).length / 2;
 
 export class CChessBoard extends React.Component {
+    squares = null;
+    scoreBoard = null;
+
     constructor(props) {
         super(props);
 
-        this.state = { 
+        this.state = {
             board: new ChessBoard(), 
         };
     }
@@ -34,18 +37,66 @@ export class CChessBoard extends React.Component {
         return String.fromCharCode(9812 + (color * PieceTypeLength) + type);
     }
 
-    render() {
-        const cbHeaders = "ABCDEFGH";
+    initializeBoard() {
         const boardDims = this.state.board._board.length * this.state.board._board.length;
+        this.squares = new Array(boardDims).fill(0);
+        this.squares = this.squares.map((o, i) => {
+            if (i >= 16 && i < 48)
+                return <div className="cb-square" key={i}></div>;
 
-        let topHeader = cbHeaders.split('').map((o, i) => <div className="cb-header-inner" key={i}>{o}</div>);
-        let botHeader = cbHeaders.split('').map((o, i) => <div className="cb-header-inner" key={i}>{o}</div>);
-        let squares = new Array(boardDims).fill(0);
-        squares = squares.map((o, i) => {
-            const piece = this.pieceToASCII(PieceColor.White, PieceType.Pawn);
-            //const piece = '\u265A';
+            let color = PieceColor.White;
+            let type = PieceType.Pawn;
+            
+            // select chess piece type
+            if ((i >= 0 && i < 8) || (i >= 56 && i < 64)) {
+                switch(i % 8) {
+                    case 0:
+                    case 7:
+                        type = PieceType.Rook;
+                        break;
+                    case 1: 
+                    case 6:
+                        type = PieceType.Knight;
+                        break;
+                    case 2:
+                    case 5:
+                        type = PieceType.Bishop;
+                        break;
+                    case 3:
+                        type = PieceType.Queen;
+                        break;
+                    case 4:
+                        type = PieceType.King;
+                        break;
+                }
+            }
+
+            // toggle color for bottom two rows
+            if (i >= 48 && i < 64)
+                color = PieceColor.Black;
+
+            const piece = this.pieceToASCII(color, type);
             return <div className="cb-square" key={i}>{piece}</div> 
         });
+    }
+
+    initializeScoreBoard() {
+        this.scoreBoard = <div>
+            <div style={{float: 'left'}}></div>
+            <div style={{textAlign: 'left'}}>Score: 0</div>
+            <div style={{textAlign: 'left'}}>Turn: 0</div>
+            <div style={{textAlign: 'left'}}>Last Move: (Piece)(0,0) to (Piece/Empty)(0,0)</div>
+            <div style={{clear: 'both'}} />
+        </div>
+    }
+
+    render() {
+        const cbHeaders = "ABCDEFGH";
+        let topHeader = cbHeaders.split('').map((o, i) => <div className="cb-header-inner" key={i}>{o}</div>);
+        let botHeader = cbHeaders.split('').map((o, i) => <div className="cb-header-inner" key={i}>{o}</div>);
+
+        this.initializeBoard();
+        this.initializeScoreBoard();
 
         return (
             <div>
@@ -55,21 +106,14 @@ export class CChessBoard extends React.Component {
                             {topHeader}
                         </div>
                     </div>
-                    {squares}
+                    {this.squares}
                     <div className="cb-bottom">
                         <div className="cb-container-inner"> 
                             {botHeader} 
                         </div>
                     </div>
                 </div>
-
-                {/*
-                <div style={{float: 'left'}}></div>
-                <div style={{textAlign: 'left'}}>Score: 0</div>
-                <div style={{textAlign: 'left'}}>Turn: 0</div>
-                <div style={{textAlign: 'left'}}>Last Move: (Piece)(0,0) to (Piece/Empty)(0,0)</div>
-                <div style={{clear: 'both'}} /> */
-                }
+                {this.scoreBoard}
             </div>
         )
     }
