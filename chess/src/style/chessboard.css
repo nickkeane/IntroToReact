@@ -40,6 +40,7 @@
 .cb-top, .cb-bottom {
     display: grid;
     align-items: stretch;
+    text-align: center;
 }
 
 .cb-top {
