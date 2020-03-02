@@ -68,6 +68,8 @@ export class CChessBoard extends React.Component {
                     case 4:
                         type = PieceType.King;
                         break;
+                    default:
+                        break;
                 }
             }
 
@@ -92,28 +94,32 @@ export class CChessBoard extends React.Component {
 
     render() {
         const cbHeaders = "ABCDEFGH";
-        let topHeader = cbHeaders.split('').map((o, i) => <div className="cb-header-inner" key={i}>{o}</div>);
-        let botHeader = cbHeaders.split('').map((o, i) => <div className="cb-header-inner" key={i}>{o}</div>);
+        const topHeader = cbHeaders.split('').map((o, i) => <div className="cb-header-inner" key={i}>{o}</div>);
+        const botHeader = cbHeaders.split('').map((o, i) => <div className="cb-header-inner" key={i}>{o}</div>);
 
         this.initializeBoard();
         this.initializeScoreBoard();
 
         return (
             <div>
-                <div className="cb-container">
-                    <div className="cb-top">
-                        <div className="cb-container-inner"> 
-                            {topHeader}
+                <div className="ui-container">
+                    <div className="cb-container">
+                        <div className="cb-top">
+                            <div className="cb-container-inner"> 
+                                {topHeader}
+                            </div>
+                        </div>
+                        {this.squares}
+                        <div className="cb-bottom">
+                            <div className="cb-container-inner"> 
+                                {botHeader} 
+                            </div>
                         </div>
                     </div>
-                    {this.squares}
-                    <div className="cb-bottom">
-                        <div className="cb-container-inner"> 
-                            {botHeader} 
-                        </div>
+                    <div className="sb-container">
+                        {this.scoreBoard}
                     </div>
                 </div>
-                {this.scoreBoard}
             </div>
         )
     }
