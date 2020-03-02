@@ -1,7 +1,7 @@
 import React from 'react';
-import { CChessBoard } from './CChessBoard';
+import CChessBoard from './CChessBoard';
 
-export class CChessGame extends React.Component {
+export default class CChessGame extends React.Component {
     render() {
         return (
             <div>

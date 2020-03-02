@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { ChessBoard } from '../models/ChessBoard';
+import ChessBoard from '../models/ChessBoard';
+import CScoreBoard from './CScoreBoard';
 
 let PieceColor = {};
 let PieceType = {};
@@ -21,7 +22,7 @@ let PieceType = {};
 const PieceColorLength = Object.keys(PieceColor).length / 2;
 const PieceTypeLength = Object.keys(PieceType).length / 2;
 
-export class CChessBoard extends React.Component {
+export default class CChessBoard extends React.Component {
     squares = null;
     scoreBoard = null;
 
@@ -31,6 +32,9 @@ export class CChessBoard extends React.Component {
         this.state = {
             board: new ChessBoard(), 
         };
+
+        this.initializeBoard();
+        this.initializeScoreBoard();
     }
 
     pieceToASCII(color, type) {
@@ -83,22 +87,13 @@ export class CChessBoard extends React.Component {
     }
 
     initializeScoreBoard() {
-        this.scoreBoard = <div>
-            <div style={{float: 'left'}}></div>
-            <div style={{textAlign: 'left'}}>Score: 0</div>
-            <div style={{textAlign: 'left'}}>Turn: 0</div>
-            <div style={{textAlign: 'left'}}>Last Move: (Piece)(0,0) to (Piece/Empty)(0,0)</div>
-            <div style={{clear: 'both'}} />
-        </div>
+        this.scoreBoard = <CScoreBoard />
     }
 
     render() {
         const cbHeaders = "ABCDEFGH";
         const topHeader = cbHeaders.split('').map((o, i) => <div className="cb-header-inner" key={i}>{o}</div>);
         const botHeader = cbHeaders.split('').map((o, i) => <div className="cb-header-inner" key={i}>{o}</div>);
-
-        this.initializeBoard();
-        this.initializeScoreBoard();
 
         return (
             <div>

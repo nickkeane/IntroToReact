@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { CChessGame } from './components/CChessGame'
+import CChessGame from './components/CChessGame'
 import './index.css'
 import './style/chessboard.css'
 

@@ -1,4 +1,4 @@
-export class ChessBoard {
+export default class ChessBoard {
     _board = null;
 
     constructor() {

@@ -1,8 +1,8 @@
 import Piece, { pieceColor, pieceType } from './Piece'
 
-export default class Bishop extends Piece {
+export default class Rook extends Piece {
     constructor(color) {
-        super(color, PieceType.Bishop);
+        super(color, PieceType.Rook);
     }
 
     isMovePossible(src, dest) {

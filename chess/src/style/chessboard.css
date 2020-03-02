@@ -2,10 +2,12 @@
     display: block;
 }
 
+# Scoreboard
 .sb-container {
     display: block;
 }
 
+# Chessboard
 .cb-container {
     display: grid;
     gap: 0 0;
