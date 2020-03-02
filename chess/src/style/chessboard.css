@@ -1,3 +1,11 @@
+.ui-container {
+    display: block;
+}
+
+.sb-container {
+    display: inline;
+}
+
 .cb-container {
     display: grid;
     gap: 0 0;
