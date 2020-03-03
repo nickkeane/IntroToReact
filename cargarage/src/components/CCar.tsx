@@ -1,15 +1,16 @@
 import React from 'react';
-import { Car } from '../models/Car';
 
-interface ICarProps {
+import Car from '../models/Car';
+
+export interface ICCarProps {
     car: Car;
 }
 
-interface ICarState {
+export interface ICCarState {
 
 }
 
-export class CCar extends React.Component<ICarProps, ICarState> {
+export default class CCar extends React.Component<ICCarProps, ICCarState> {
     render() {
         return (
             <div>

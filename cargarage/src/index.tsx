@@ -4,8 +4,8 @@ import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import './index.css';
 
-import { CCar } from './components/Car';
-import { Car } from './models/Car';
+import CCar from './components/CCar';
+import Car from './models/Car';
 
 class App extends React.Component {
     componentDidMount() { 
@@ -20,4 +20,6 @@ class App extends React.Component {
     }
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+let rootElement: HTMLElement | null = $('#root').get(0);
+//let rootElement2: HTMLElement | null = document.getElementById('root');
+ReactDOM.render(<App />, rootElement);

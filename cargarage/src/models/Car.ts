@@ -1,11 +1,12 @@
 import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
 
 @Entity()
-export class Car {
+export default class Car {
     constructor(year: number, make: string, model: string) {
         this.year = year;
         this.make = make;
         this.model = model;
+        this.price = 1000.00;
     }
 
     @PrimaryGeneratedColumn()
@@ -19,4 +20,7 @@ export class Car {
 
     @Column({type: 'string'})
     model: string = "";
+
+    @Column({type: 'number'})
+    price: number = 0.00
 }
