@@ -50,8 +50,12 @@ function _fenPiecePlacement(board) {
     }
 }
 
+function _fenCalcCastlingRights(board) {
+
+}
 export default class ChessBoard {
     _board = null;
+    _isWhiteTurn = true;
 
     constructor() {
         this._board = new Array(8);
@@ -66,9 +70,11 @@ export default class ChessBoard {
     get toFen() {
         let out = [];
         out.push(
-            _fenPiecePlacement(this._board)
+            _fenPiecePlacement(this._board),
+            (this._isWhiteTurn) ? 'w' : 'b',
+            _fenCalcCastlingRights(this._board)
         );
-        return out.join('');
+        return out.join(' ');
     }
 
 //     get boardRow(row) {
