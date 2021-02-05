@@ -1,4 +1,4 @@
-@import-normalize;
+@import '~@csstools/normalize.css';
 @import url(./fonts/roboto.css);
 @import url(./fonts/tradeWinds.css);
 
