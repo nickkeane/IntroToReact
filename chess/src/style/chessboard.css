@@ -2,12 +2,12 @@
     display: block;
 }
 
-# Scoreboard
+/* Scoreboard */
 .sb-container {
     display: block;
 }
 
-# Chessboard
+/* Chessboard */
 .cb-container {
     display: grid;
     gap: 0 0;
@@ -33,7 +33,7 @@
     text-align: center;
 }
 
-# Grid Letter Mapping
+/* Grid Letter Mapping */
 .cb-header-inner {
     text-align: center;
     align-self: center;
@@ -61,7 +61,7 @@
     background: linear-gradient(180deg, rgb(95, 53, 25) 0%, rgb(105, 66, 12) 35%, rgba(166,107,0,1) 100%);
 }
 
-# Recolor alternating squares
+/* # Recolor alternating squares */
 .cb-square {}
 .cb-square:nth-child(-2n+9),
 .cb-square:nth-child(9) ~ div:nth-child(-2n+16),
