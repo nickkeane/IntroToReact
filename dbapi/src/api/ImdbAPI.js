@@ -15,16 +15,16 @@ api_key=${this.apiKey}`);
 
     async getNowPlaying(pageNum) {
         throw Error('Not Implemented');
-        try {
-            let response = await fetch(`${this.url}discover/movie?
-api_key=${this.apiKey}
-&primary_release_date.gte=2020-01-01
-&primary_release_date.lte=2020-03-01`);
-            if (response.ok)
-                return await response.json();
-        } catch (err) {
-            console.log(err);
-        }
+//         try {
+//             let response = await fetch(`${this.url}discover/movie?
+// api_key=${this.apiKey}
+// &primary_release_date.gte=2020-01-01
+// &primary_release_date.lte=2020-03-01`);
+//             if (response.ok)
+//                 return await response.json();
+//         } catch (err) {
+//             console.log(err);
+//         }
     }
 
     async getUpcoming(pageNum) {
