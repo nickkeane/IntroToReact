@@ -1,4 +1,2 @@
-module.exports = {
-    parser: 'postcss-scss',
-    plugins: []
-}
+export const parser = 'postcss-scss';
+export const plugins = [];
