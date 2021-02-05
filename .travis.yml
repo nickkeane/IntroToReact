@@ -3,7 +3,7 @@ node_js:
   - "stable"
 cache:
   directories:
-    - node_modules
+    - cargarage/node_modules
 env:
   - SURGE_LOGIN=nickkeane23@gmail.com
   - SURGE_TOKEN=281bf4bff0b9c5c0919bcdd30a0124c0
