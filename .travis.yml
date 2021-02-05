@@ -1,3 +1,5 @@
+os: linux
+dist: xenial
 language: node_js
 node_js:
   - "stable"
@@ -9,6 +11,7 @@ env:
   - SURGE_TOKEN=281bf4bff0b9c5c0919bcdd30a0124c0
 script:
   - cd cargarage
+  - npm install
   - npm test
   - npm run build
 deploy:
@@ -16,5 +19,6 @@ deploy:
   cleanup: false
   domain: nickkeane23-react-cargarage.surge.sh
   project: ./cargarage/build/
-on:
-  branch: main
+branches:
+  only:
+    - main
