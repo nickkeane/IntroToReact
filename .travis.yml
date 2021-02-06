@@ -12,12 +12,12 @@ script:
   - npm test
   - npm run build
 deploy:
+  skip_cleanup: true
   provider: surge
   edge: true
   login: nickkeane23@gmail.com
   token: 281bf4bff0b9c5c0919bcdd30a0124c0
   domain: nickkeane23-react-cargarage.surge.sh
   project: ./cargarage/build
-  cleanup: false
   on:
     branch: main
