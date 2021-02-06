@@ -3,32 +3,50 @@
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
         "prettier/@typescript-eslint",
-        "plugin:prettier/recommended"
+        "plugin:prettier/recommended",
+        "prettier/react"
     ],
     "plugins": ["react", "@typescript-eslint", "prettier"],
     "env": {
         "browser": true,
+        "es6": true,
+        "node": true,
         "jasmine": true,
         "jest": true
     },
     "parserOptions": {
-      "ecmaVersion": 2018, // Allows for the parsing of modern ECMAScript features
-      "sourceType": "module", // Allows for the use of imports
-      "ecmaFeatures": {
-          "jsx": true
-      }
+        "project": "./tsconfig.json",
+        "ecmaVersion": 2020, // Allows for the parsing of modern ECMAScript features
+        "sourceType": "module", // Allows for the use of imports
+        "ecmaFeatures": {
+            "jsx": true
+        }
     },
     "settings": {
         "react": {
             "pragma": "React",
             "version": "detect"
-          }
+        }
     },
     "rules": {
-      // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
-      // e.g. "@typescript-eslint/explicit-function-return-type": "off",
-      "prettier/prettier": ["error", { "singleQuote": true }]
+        // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
+        // e.g. "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/no-empty-interface": "off",
+        "@typescript-eslint/no-inferrable-types": "off",
+        "prettier/prettier": ["error", {
+            "endOfLine": "auto",
+            "tabWidth": 4,
+            "semi": true,
+            "singleQuote": true,
+            "trailingComma": "es5"
+        }],
+        "react/jsx-indent": ["error", 4, { 
+            "checkAttributes": true, 
+            "indentLogicalExpressions": true 
+        }]
     }
 }

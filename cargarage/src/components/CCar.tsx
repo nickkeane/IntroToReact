@@ -6,16 +6,13 @@ export interface ICCarProps {
     car: Car;
 }
 
-export interface ICCarState {
-
-}
-
+export interface ICCarState {}
 export default class CCar extends React.Component<ICCarProps, ICCarState> {
-    render() {
+    render(): JSX.Element {
         return (
             <div>
-                {this.props.car.year} {this.props.car.make} {this.props.car.model}
+                {`${this.props.car.year} ${this.props.car.make} ${this.props.car.model}`}
             </div>
-        )
+        );
     }
 }
