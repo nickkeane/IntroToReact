@@ -19,6 +19,7 @@ deploy:
   cleanup: false
   domain: nickkeane23-react-cargarage.surge.sh
   project: ./cargarage/build/
-branches:
-  only:
-    - main
+  on:
+    branches:
+      only:
+        - main
