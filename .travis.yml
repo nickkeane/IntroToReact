@@ -11,15 +11,12 @@ env:
 script:
   - cd cargarage
   - npm install
-  - npm update
   - npm test
   - npm run build
 deploy:
   provider: surge
-  cleanup: false
-  domain: nickkeane23-react-cargarage.surge.sh
+  domain: nickkeane23-react-cargarage.surge.sh  
   project: ./cargarage/build/
+  cleanup: false
   on:
-    branches:
-      only:
-        - main
+    branch: main
